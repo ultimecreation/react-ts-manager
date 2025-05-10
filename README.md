@@ -4,7 +4,7 @@ This is a personal tasks manager writen in typescript with React
 The application has been tested with vitest
 
 # Features 
-- authentication (register,login,logout with the Context API
+- authentication register,login,logout with the Context API
 - Create,Read,Update and delete user tasks dynamicaly one 1 apge with server function, optimistic updates and a custom filter
 
 # Testing
