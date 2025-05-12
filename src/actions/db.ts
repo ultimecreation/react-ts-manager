@@ -4,7 +4,7 @@ import type { Task } from "../types/Task"
 import type { User } from "../types/User"
 
 export const getTasks = async () => {
-    const tasks = await (await fetch("http://localhost:3000/tasks?_sort=dueDate&_order=desc")).json()
+    const tasks = await (await fetch("http://localhost:3000/tasks")).json()
     return tasks
 }
 
@@ -23,7 +23,7 @@ export const saveTask: (task: Task) => Promise<Task> = async (task: Task) => {
 
 export const updateTask: (task: Task) => Promise<Task> = async (task: Task) => {
     const updatedTask = await (await fetch(`http://localhost:3000/tasks/${task.id}`, {
-        method: "PATCH",
+        method: "PUT",
         body: JSON.stringify(task)
     })).json()
     return updatedTask
