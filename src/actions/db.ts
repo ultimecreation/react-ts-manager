@@ -3,7 +3,7 @@
 import type { Task } from "../types/Task"
 import type { User } from "../types/User"
 
-export const getTasks: () => Promise<Task[]> = async () => {
+export const getTasks = async () => {
     const tasks = await (await fetch("http://localhost:3000/tasks?_sort=dueDate&_order=desc")).json()
     return tasks
 }
@@ -42,12 +42,16 @@ export const deleteTask: (id: string) => Promise<string> = async (id: string) =>
 }
 
 export const saveUser: (user: User) => Promise<User> = async (user: User) => {
+
     const userFound = await (await fetch(`http://localhost:3000/users?email=${user.email}&password=${user.password}`)).json()
     if (userFound.length === 0) {
-        return await (await fetch("http://localhost:3000/users", {
+        console.log(user)
+        const foundUser = await (await fetch("http://localhost:3000/users", {
             method: "POST",
             body: JSON.stringify(user)
         })).json()
+
+        return foundUser
     }
     return null
 }

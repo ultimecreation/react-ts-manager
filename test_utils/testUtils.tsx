@@ -16,3 +16,4 @@ export const renderWithAuth = (component: ReactNode) => {
         </AuthContextProvider>
     </BrowserRouter>)
 }
+

@@ -17,7 +17,7 @@ const RegisterForm = () => {
     return (
         <div className='col-6 mx-auto'>
             <h1>Register</h1>
-            <form action={formAction} >
+            <form action={formAction}>
 
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label">Username</label>
@@ -53,7 +53,7 @@ const RegisterForm = () => {
                     />
                     {state.errors.password && <p className="text-danger">{state.errors.password} </p>}
                 </div>
-                {state.success && <p className="alert alert-success">You are Registered in! </p>}
+                {state.success && <p className="alert alert-success">You are Registered in!</p>}
                 <button type="submit" className="btn btn-primary" disabled={pending}>{pending ? "Submitting" : "Submit"}</button>
             </form>
         </div>

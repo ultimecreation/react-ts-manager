@@ -8,14 +8,6 @@ const TaskForm = ({ formAction, task, setTask, errors }: TaskFormProps) => {
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const formElement = e.target as unknown as HTMLFormElement
-        if (formElement.type === 'checkbox') {
-            setTask(prevState => {
-                return {
-                    ...prevState,
-                    [formElement.name]: !formElement.checked
-                }
-            })
-        }
 
         setTask(prevState => {
             return {
@@ -60,17 +52,7 @@ const TaskForm = ({ formAction, task, setTask, errors }: TaskFormProps) => {
                     {errors?.dueDate && <p className="text-danger">{errors.dueDate} </p>
                     }
                 </div>
-                {/* {task.id && (
-                    <div className="mb-3">
-                        <div className="form-check">
-                            <input className="form-check-input" name="completed" type="checkbox" id="completed" onChange={handleChange} checked={task.completed === true ? true : false} />
-                            <label className="form-check-label" htmlFor="completed">
-                                Completed
-                            </label>
-                        </div>
-                    </div>
 
-                )} */}
                 <SubmitBtn />
 
 

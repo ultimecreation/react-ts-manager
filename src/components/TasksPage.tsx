@@ -131,12 +131,13 @@ const TasksPage = () => {
     }
 
     useEffect(() => {
+
         getTasks().then(tasks => setTasks(tasks))
     }, [])
 
 
     return (
-        <div className='col-md-6 col-lg-5 mx-auto'>
+        <div className='col-md-6 col-lg-5 mx-auto' data-testid="TaskPage">
 
 
             <TaskForm

@@ -65,7 +65,7 @@ const LoginForm = () => {
                 <form onSubmit={handleFormAction} >
 
                     <div className="mb-3">
-                        <label htmlFor="title" className="form-label">Email</label>
+                        <label htmlFor="email" className="form-label">Email</label>
                         <input
                             type="email"
                             className="form-control"
@@ -91,7 +91,7 @@ const LoginForm = () => {
                         }
                     </div>
                     {successMsg && <p className="alert alert-success">{successMsg}</p>}
-                    <button type="submit" className="btn btn-primary" >  Submit</button>
+                    <button type="submit" className="btn btn-primary" >Submit</button>
                 </form>
             </div>
         </>
